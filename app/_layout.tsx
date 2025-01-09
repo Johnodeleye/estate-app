@@ -1,9 +1,10 @@
-import { Stack } from "expo-router";
+import { SplashScreen, Stack } from "expo-router";
 import './globals.css';
 import { useFonts } from 'expo-font';
+import { useEffect } from "react";
 
 export default function RootLayout() {
-  const [fontsLoaded] = useFonts(map:{
+  const [fontsLoaded] = useFonts({
     "Rubik-Bold": require('../assets/fonts/Rubik-Bold.ttf'),
     "Rubik-Extrabold": require('../assets/fonts/Rubik-ExtraBold.ttf'),
     "Rubik-Light": require('../assets/fonts/Rubik-Light.ttf'),
@@ -12,8 +13,23 @@ export default function RootLayout() {
     "Rubik-SemiBold": require('../assets/fonts/Rubik-SemiBold.ttf'),
   })
 
+  useEffect(() => {
+    if (fontsLoaded) {
+      console.log("fonts have loaded");
+      SplashScreen.hideAsync();
+    }
+  }, [fontsLoaded]);
+
+  if (!fontsLoaded) {
+    return null;
+  }
+
   return <Stack />;
 }
+
+
+
+
 
 // You're right! Here's the corrected version for 2025:  
 
