@@ -3,9 +3,9 @@
     "name": "first-app",
     "slug": "first-app",
     "version": "1.0.0",
-    "orientation": "portrait",
+    "orientation": "potrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "myapp",
+    "scheme": "realestate",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
