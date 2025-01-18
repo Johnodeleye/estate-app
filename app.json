@@ -15,7 +15,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.anonymous.firstapp"
     },
     "web": {
       "bundler": "metro",
@@ -36,7 +37,7 @@
       [
         "expo-font",
         {
-          "fonts":[
+          "fonts": [
             "./assets/fonts/Rubik-Bold.ttf",
             "./assets/fonts/Rubik-ExtraBold.ttf",
             "./assets/fonts/Rubik-Light.ttf",
