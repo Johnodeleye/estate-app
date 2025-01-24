@@ -2,6 +2,7 @@ import { SplashScreen, Stack } from "expo-router";
 import './globals.css';
 import { useFonts } from 'expo-font';
 import { useEffect } from "react";
+import GlobalProvider from "@/lib/global-provider";
 
 export default function RootLayout() {
   const [fontsLoaded] = useFonts({
@@ -24,119 +25,76 @@ export default function RootLayout() {
     return null;
   }
 
-  return <Stack screenOptions={{headerShown:false}}/>;
+  return (
+    <GlobalProvider>
+        <Stack screenOptions={{headerShown:false}}/>
+        {/* //this headershown:false will hide the header tabs in the screen */}
+    </GlobalProvider>
+  )
 }
 
 
 
+// 1. "You Don't Need to Be Perfect to Start 🚀"
+// "Perfection is a myth. When I started coding, I didn't have it all figured out—and that's okay! Growth happens when you take action. Start with what you know, keep learning, and watch yourself get better every single day. 💡 Stop waiting for the perfect moment—start now!"
 
+// 2. "The Real Secret to Mastering Coding 💻"
+// "Want to become a great developer? Here's the secret—consistency. It's not about coding for 10 hours once a week, it's about showing up every day, even if it's just for 30 minutes. Small efforts compound into big results. Stay consistent, and watch how far you'll go! 🚀"
 
-// You're right! Here's the corrected version for 2025:  
+// 3. "From Beginner to Pro? Here's the Shortcut 🔑"
+// "The fastest way to grow in tech? Build projects! Stop waiting for the 'right time' or endless tutorials. Pick a small idea, build it, fail, learn, repeat. Projects teach you more than any course ever will. Start today—just take that first step! 💥"
 
-// **🎯 Title:**  
-// "Top 3 Skills Every Developer Needs in 2025! 🚀"  
+// 4. "Why You're Struggling as a New Coder 😬"
+// "Struggling to stay motivated? It's because you're focusing on the wrong thing. Stop comparing your journey to others! Focus on your growth, your wins, and your pace. Remember, every expert was once a beginner. Keep pushing—you've got this! 💪"
 
-// **📄 Description:**  
-// "Want to stay ahead as a developer in 2025? 🚀 Here are the top 3 must-have skills you should focus on to level up your tech career! 📈  
-// #YoungDeveloper #CodingTips #TechSkills #Programming #TechJourney #Shorts #perspicaciousdev #DeveloperGrowth"  
+// 5. "What I Wish I Knew When Starting Coding 🎯"
+// "If I could go back, here's what I'd tell my beginner self: 1️⃣ Focus on one language at a time. 2️⃣ Build small projects early. 3️⃣ Join tech communities—never code alone! Coding is a marathon, not a sprint. Trust the process and stay patient. 🚀"
 
-// **🎬 Script (40 sec max):**  
-// 🎯 *[Intro]*  
-// "Hey developers! 🚀 Want to crush it in 2025? Here are 3 must-have skills! 👨‍💻"  
-
-// 1️⃣ **Problem-Solving** – "Coding is problem-solving! Sharpen your critical thinking skills daily. 🧠"  
-// 2️⃣ **Version Control (Git)** – "Learn Git! It helps you collaborate and avoid losing code. 🔗"  
-// 3️⃣ **APIs & Backend Basics** – "Understand APIs and how the backend works – it makes you a better dev! 🔥"  
-
-// 📢 *[Outro]*  
-// "Which skill are you working on this year? Drop it in the comments! 👇 Don't forget to like, share, and subscribe! ✅ #perspicaciousdev"  
-
-// **🔥 Trending Music:** Try motivational background tracks like *"Epic Inspiration"* or *"Modern Tech Beat."*  
-
-// Let me know if you need another idea! 😊  
+// Do you want me to help you brainstorm hashtags or video ideas around these?
 
 
 
 
-// Here are the descriptions and hashtags for each of your topics:
-
-// ---
-
-// ### **1. How to Overcome Tutorial Hell 🚀**
-// **Description:**  
-// Stuck in the endless loop of tutorials? It's time to break free and start building! Learn how to overcome tutorial hell by shifting your focus to creating projects that challenge you and accelerate your growth as a developer. Stop watching, start building! 🚀
-
-// **Hashtags:**  
-// #TutorialHell #DeveloperJourney #TechTips #BuildProjects #CodingJourney #LearnByDoing #WebDevelopment #SelfTaught #CodingTips #Programming
-
-// ---
-
-// ### **2. The Truth About Becoming a Self-Taught Developer 🧠**
-// **Description:**  
-// Becoming a self-taught developer is more than just learning to code; it's about perseverance and continuous growth. It won’t always be easy, but staying persistent and focusing on building real projects is the key to success. Let’s dive into the truth about the self-taught journey! 💪
-
-// **Hashtags:**  
-// #SelfTaughtDeveloper #TechJourney #LearnToCode #WebDevelopment #DeveloperMindset #CodingJourney #SelfGrowth #PersistencePaysOff #ProgrammingLife
-
-// ---
-
-// ### **3. Tech Careers Beyond Coding 💼**
-// **Description:**  
-// Tech isn’t just about writing code! Explore exciting careers like UI/UX Design, Product Management, QA Testing, and more. Tech offers a wide range of opportunities, and there’s a place for every skill set. Discover your perfect tech career today! 🌟
-
-// **Hashtags:**  
-// #TechCareers #NonCodingTech #UIUXDesign #ProductManagement #TechJobs #QAEngineer #TechIndustry #TechOpportunities #CareerGrowth #WebDevelopment
-
-// ---
-
-// ### **4. 3 Mistakes New Developers Make ❌**
-// **Description:**  
-// Starting out as a new developer? Avoid these common mistakes that can hold you back: neglecting documentation, not building projects, and ignoring networking. Learn from these mistakes and set yourself up for success on your dev journey! 🚀
-
-// **Hashtags:**  
-// #NewDeveloper #DeveloperMistakes #TechTips #LearnFromMistakes #Networking #DocumentationMatters #WebDevJourney #ProgrammingTips #CodingMistakes
-
-// ---
-
-// ### **5. Why Personal Branding Matters for Developers 🌟**
-// **Description:**  
-// In today’s world, your personal brand is essential! Build your online presence on LinkedIn, Instagram, or YouTube to stand out as a developer. Share your journey, connect with others, and showcase your skills. Start building your personal brand today! 🌐
-
-// **Hashtags:**  
-// #PersonalBranding #TechCommunity #DeveloperLife #LinkedInTips #WebDevelopment #TechBranding #ContentCreation #BuildYourBrand #ProgrammingCommunity
-
-// ---
-
-// These descriptions and hashtags should complement your content nicely on YouTube Shorts, LinkedIn, Instagram, and X. Let me know if you need further adjustments!
 
 
-// Here are the expanded 35-second scripts with more details for each topic:
 
-// ---
+// You said:
+// okkkk this is better pls now give me the description and the hashtags together thanks
+// ChatGPT said:
+// ChatGPT
+// Here are the descriptions and hashtags for each of the 15-20 second video scripts:
 
-// ### **1. How to Overcome Tutorial Hell 🚀**  
-// "Tutorial Hell is real—it’s when you’re stuck watching videos without actually doing anything. You watch one tutorial after another, but you’re still not making progress. So, what do you do? Stop consuming and start creating! Pick a project—maybe a personal website, a small app, or even a clone of your favorite website. The key here is *action*. Build, make mistakes, Google the answers, and learn by doing. Remember, you can watch tutorials forever, but real growth happens when you *build* and *apply* what you’ve learned. Get started today—take control of your learning journey! 🚀"
+// 1. "You Don't Need to Be Perfect to Start 🚀"
+// 🎯 Description:
+// "Perfection is holding you back! Stop overthinking and take that first step. Growth happens when you start, not when you're perfect. 🎯 Start coding today and watch how far you can go!"
 
-// ---
+// 📌 Hashtags:
+// #CodingMotivation #TechJourney #BeginnersInTech #LearnToCode #GrowthMindset #TechInspiration #KeepLearning
 
-// ### **2. The Truth About Becoming a Self-Taught Developer 🧠**  
-// "Becoming a self-taught developer isn’t just about learning to code—it’s about developing the *right mindset*. It’s a journey of *self-discipline* and *consistent effort*. At times, you’ll feel overwhelmed, or wonder if you’re ‘good enough,’ but trust me, that’s part of the process. You’re going to hit roadblocks, and that’s okay! What's important is that you *persist*. You’ll need to focus on *projects*, break down big problems, and learn by doing. It’s also about connecting with others, joining communities, and asking for help when needed. The journey is long, but with persistence, you can do it! 💪"
+// 2. "The Real Secret to Mastering Coding 💻"
+// 🎯 Description:
+// "Consistency > Intensity! 🔑 The secret to mastering coding is showing up every day, even for 30 minutes. Small daily habits will take you further than occasional sprints. Stay consistent and watch your skills grow! 🚀"
 
-// ---
+// 📌 Hashtags:
+// #ConsistencyIsKey #CodingTips #LearnToCode #TechEducation #CodingJourney #MotivationMonday #TechSuccess
 
-// ### **3. Tech Careers Beyond Coding 💼**  
-// "Many think tech is all about writing code, but that’s just one part of the equation. There are many rewarding careers *beyond coding* in tech. You could become a **Product Manager**, who strategizes and leads the creation of software, or a **UI/UX Designer**, making tech more accessible and beautiful. If you’re good at breaking things and solving puzzles, you could even be a **QA Tester**, ensuring the quality of software. And let’s not forget **Tech Sales**—where you help companies sell their products while building strong relationships. The tech field is huge, and there’s a place for everyone, no matter your skillset! 🌐"
+// 3. "From Beginner to Pro? Here's the Shortcut 🔑"
+// 🎯 Description:
+// "Stop waiting for the 'perfect time'—it doesn't exist! 🚀 The best way to level up as a developer is by building projects. Fail, learn, repeat! 💡 Each project teaches you something new. Start now and watch your skills grow!"
 
-// ---
+// 📌 Hashtags:
+// #BuildToLearn #SelfTaughtDeveloper #CodeNewbie #TechTips #SoftwareDevelopment #LearnByDoing #Inspiration
 
-// ### **4. 3 Mistakes New Developers Make ❌**  
-// "Starting out as a new developer? Here are 3 common mistakes to avoid. First, **neglecting documentation**. It’s tempting to skip the docs, but learning how to read and understand documentation will save you hours of frustration. Second, **never building projects**. Tutorials are great, but nothing beats the hands-on experience you get when you actually build something! And lastly, **not networking**. Tech is all about collaboration—don’t be afraid to reach out, join communities, and share your projects. Networking can open doors you never imagined. Learn from these mistakes and build your dev career with confidence! 🚀"
+// 4. "Why You're Struggling as a New Coder 😬"
+// 🎯 Description:
+// "Feeling stuck in your coding journey? 😟 It's not you—it's your mindset. Stop comparing yourself to others and focus on YOUR progress. Remember, every expert was once a beginner. Keep going! 💪"
 
-// ---
+// 📌 Hashtags:
+// #StayMotivated #CodingJourney #SelfImprovement #GrowthMindset #TechCommunity #NewCoder #TechMotivation
 
-// ### **5. Why Personal Branding Matters for Developers 🌟**  
-// "Your personal brand is your superpower! 🚀 As a developer, you can’t just hide behind your code. Share your journey! Whether it’s on **LinkedIn**, **Instagram**, or even **YouTube**, let the world know what you’re working on. Share your challenges, victories, and even the struggles. Your personal brand is what sets you apart in a crowded job market. Companies and clients want to know *who* you are, not just *what* you can do. So, create content, engage with the community, and start building your brand today. In today’s world, personal branding is key to standing out! 💡"
+// 5. "What I Wish I Knew When Starting Coding 🎯"
+// 🎯 Description:
+// "If you're just starting out, here's the advice I wish someone told me: 1️⃣ Focus on one language. 2️⃣ Build small projects early. 3️⃣ Join tech communities for support. 🌟 Stay patient and trust your journey!"
 
-// ---
-
-// These scripts should give you more depth and context, providing value while keeping them suitable for YouTube Shorts. Let me know if you'd like any more changes!
+// 📌 Hashtags:
+// #CodingAdvice #TechGrowth #BeginnersGuide #SelfTaughtCoder #LearnToCode #DeveloperTips #TechJourney
