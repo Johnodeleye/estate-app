@@ -3,6 +3,8 @@ import React from 'react'
 import icons from '@/constants/icons'
 import images from '@/constants/images'
 import { settings } from '@/constants/data';
+import { useGlobalContext } from '@/lib/global-provider';
+import { logout } from '@/lib/appwrite';
 
 interface SettingsItemProps {
   icon: ImageSourcePropType;
@@ -23,8 +25,18 @@ const SettingsItem = ({ icon, title, onPress, textStyle, showArrow = true }: Set
   </TouchableOpacity>
 )
 const profile = () => {
+  const {user, refetch} = useGlobalContext();
+
   const handleLogout = async () => {
-    Alert.alert('hello', 'hello')
+
+    const result = await logout();
+
+    if(result) {
+      refetch();
+      Alert.alert('Success✅', 'Logged out successfully');
+    }else{
+      Alert.alert('Error', 'Failed to logout');
+    }
   }
   return (
     <SafeAreaView className='h-full bg-white'>
@@ -40,11 +52,11 @@ const profile = () => {
         <View className='flex-row justify-center flex mt-5'>
 
           <View className='flex flex-col items-center relative mt-5'>
-            <Image source={images.profile} className='w-24 h-24 border-2 border-gray-300 rounded-full' />
+            <Image source={{uri: user?.avatar || images.profile}} className='border-2 border-gray-300 rounded-full size-44 relative' />
             <TouchableOpacity className='absolute bottom-14 right-4'>
               <Image source={icons.edit} className='size-6'/>
             </TouchableOpacity>
-            <Text className='text-2xl font-rubik-medium text-gray-600 mt-2'>Odeleye | P.Dev</Text>
+            <Text className='text-2xl font-rubik-bold text-gray-600 mt-2'>Odeleye | P.Dev</Text>
             <Text className='text-sm font-rubik-medium text-gray-600'>@perspicacious.dev</Text>
           </View>
 
