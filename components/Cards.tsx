@@ -31,14 +31,31 @@ export const FeaturedCard = ({ onPress }: Props) => {
   )
 }
 //C:\Program Files\PostgreSQL\17, password is test
-export const Card = () => {
-  const onPress = () => {
-    Alert.alert('Notification', 'Still working on this page ')
-    console.log('Card pressed');
-  }
+export const Card = ({onPress}:Props) => {
+
+  // const onPress = () => {
+  //   Alert.alert('Notification', 'Still working on this page ')
+  //   console.log('Card pressed');
+  // }
+
   return (
-    <TouchableOpacity onPress={onPress}>
-      <Text>Card</Text>
+    <TouchableOpacity onPress={onPress} className='w-full mt-4 flex-1 px-3 py-4 rounded-lg bg-white shadow-lg shadow-black-100/70 relative'>
+       <View className='flex flex-row items-center absolute px-2 top-5 right-5 bg-white/90 p-1 rounded-full z-50'>
+            <Image source={icons.star} className='size-2.5'/>
+            <Text className='mt-1 ml-0.5 text-xs font-rubik-bold text-primary-300'>4.4</Text>
+        </View>
+
+        <Image source={images.newYork} className='w-full h-40 rounded-lg'/>
+
+        <View className='flex flex-col mt-2'>
+            <Text className='text-base font-rubik-bold text-black-300'>Cozy Studio</Text>
+            <Text className='font-rubik text-black-200 text-xs'>22, Admiralty Way, Lekki, Lagos, Nigeria</Text>
+
+            <View className='flex flex-row items-center justify-between mt-2'>
+              <Text className='text-base font-rubik-bold text-primary-300'>$2,500</Text>
+              <Image source={icons.heart} className='w-5 h-5 mr-2' tintColor={'#191d31'}/>
+            </View>
+        </View>
     </TouchableOpacity>
   )
 }
